@@ -113,11 +113,14 @@
 	 - examples:
 	 -     http://localhost:8080/static/images/pets.png
 	 -     http://localhost:8080/static/styles/petclinic.css
-	-->
+	 
+	 Commented out, as described at http://deors.wordpress.com/2012/09/06/petclinic-tomcat-7/
+
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>
 		<url-pattern>/static/*</url-pattern>
 	</servlet-mapping>
+	-->
 	
 	<!--
 		- Servlet that dispatches request to registered handlers (Controller implementations).

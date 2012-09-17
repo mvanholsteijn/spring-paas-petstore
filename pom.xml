@@ -292,5 +292,6 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<finalName>petclinic</finalName> 
 	</build>
 </project>

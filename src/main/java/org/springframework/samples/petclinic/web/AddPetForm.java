@@ -1,9 +1,13 @@
 
 package org.springframework.samples.petclinic.web;
 
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.samples.petclinic.Clinic;
 import org.springframework.samples.petclinic.Owner;
 import org.springframework.samples.petclinic.Pet;
@@ -20,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.context.request.WebRequest;
 
 /**
  * JavaBean form controller that is used to add a new <code>Pet</code> to the
@@ -36,6 +41,15 @@ public class AddPetForm {
 
 	private final Clinic clinic;
 
+	// see http://deors.wordpress.com/2012/09/06/petclinic-tomcat-7/
+	@InitBinder
+	public void initBinder(WebDataBinder binder, WebRequest request) {
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	    dateFormat.setLenient(false);
+	    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+	    binder.registerCustomEditor(String.class, new StringTrimmerEditor(false));
+	    binder.registerCustomEditor(PetType.class, new PetTypeEditor(this.clinic));
+	}
 
 	@Autowired
 	public AddPetForm(Clinic clinic) {

@@ -7,4 +7,3 @@ To use:
 - mvn install tomcat:run
 - go to http://localhost:8080/org.springframework.samples.petclinic/
 
-(Jetty work in progres)

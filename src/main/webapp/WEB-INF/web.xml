@@ -137,6 +137,11 @@
 		<load-on-startup>2</load-on-startup>
 	</servlet>
 
+         <servlet>
+                  <servlet-name>health</servlet-name>
+                  <jsp-file>/health.jsp</jsp-file>
+         </servlet>
+
 	<!--
 		- Maps the petclinic dispatcher to "*.do". All handler mappings in
 		- petclinic-servlet.xml will by default be applied to this subpath.
@@ -149,6 +154,11 @@
 		<servlet-name>petclinic</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+
+         <servlet-mapping>
+                  <servlet-name>health</servlet-name>
+                  <url-pattern>/health</url-pattern>
+         </servlet-mapping>
 
 	<filter>
 		<filter-name>httpMethodFilter</filter-name>

@@ -15,7 +15,12 @@
 
 	<!-- Configurer that replaces ${...} placeholders with values from a properties file -->
 	<!-- (in this case, JDBC-related settings for the dataSource definition below) -->
-	<context:property-placeholder location="classpath:jdbc.properties"/>
+	<context:property-placeholder location="classpath:jdbc.properties" system-properties-mode="OVERRIDE"/>
+    
+    <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+    <property name="searchContextAttributes" value="true"/>
+    <property name="contextOverride" value="true"/>
+        
 
 	<!-- DataSource configuration for Apache Commons DBCP. -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"

@@ -16,6 +16,6 @@ then
     exit 5
 fi
 
-/usr/bin/mysql -u "$OPENSHIFT_DB_USERNAME" --password="$OPENSHIFT_DB_PASSWORD" -h "$OPENSHIFT_DB_HOST" "$OPENSHIFT_APP_NAME" < "$OPENSHIFT_REPO_DIR/src/main/resources/initDB.txt"
+/usr/bin/mysql -u "$OPENSHIFT_DB_USERNAME" --password="$OPENSHIFT_DB_PASSWORD" -h "$OPENSHIFT_DB_HOST" "$OPENSHIFT_APP_NAME" < "$OPENSHIFT_REPO_DIR/src/main/db/mysql/initDB.txt"
     
 echo "petclinic database is created and/or updated"

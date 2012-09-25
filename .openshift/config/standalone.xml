@@ -96,7 +96,8 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jndi-name="java:jboss/datasources/MysqlDS" enabled="${mysql.enabled}" use-java-context="true" pool-name="MysqlDS">
+		<!--Using a general datasource, same as in our local jetty configuration -->
+                <datasource jndi-name="java:comp/env/jdbc/petclinic" enabled="${mysql.enabled}" use-java-context="true" pool-name="MysqlDS">
                     <connection-url>jdbc:mysql://${env.OPENSHIFT_DB_HOST}:${env.OPENSHIFT_DB_PORT}/${env.OPENSHIFT_APP_NAME}</connection-url>
                     <driver>mysql</driver>
                     <security>

@@ -11,7 +11,7 @@
 			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 			http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
-            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd"
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd"
             >
 				
 	<!-- ========================= DATASOURCE DEFINITION ========================= -->				
@@ -25,9 +25,9 @@
 
 	<!-- Database initializer. If any of the script fails, the initialization stops. -->
 	<!-- As an alternative, for embedded databases see <jdbc:embedded-database/>. -->
-	<!-- <jdbc:initialize-database data-source="dataSource">
+	<jdbc:initialize-database data-source="dataSource">
 		<jdbc:script location="${jdbc.initLocation}"/>
 		<jdbc:script location="${jdbc.dataLocation}"/>
-	</jdbc:initialize-database> -->
+	</jdbc:initialize-database>
 
 </beans>

@@ -10,7 +10,7 @@
 			http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
 			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-	<context:property-placeholder location="classpath:/jdbc.properties" />
+	<context:property-placeholder location="classpath:jdbc.properties" system-properties-mode="OVERRIDE"/>
 
 	<tx:annotation-driven />
 
